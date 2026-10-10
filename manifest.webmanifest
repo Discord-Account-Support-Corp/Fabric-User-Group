@@ -1,0 +1,21 @@
+
+{
+  "id": "./",
+  "name": "Microsoft Fabric Community User Group",
+  "short_name": "Fabric Community",
+  "description": "An independent app-style entry point for the Microsoft Fabric Community User Group.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f1f6fc",
+  "theme_color": "#0b5cab",
+  "icons": [
+    {
+      "src": "./icons/fabric-community.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
