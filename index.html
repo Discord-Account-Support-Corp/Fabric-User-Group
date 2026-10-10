@@ -1,0 +1,164 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b5cab">
+  <meta name="description" content="Your launch point for the Microsoft Fabric Community User Group.">
+
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/fabric-community.svg" type="image/svg+xml">
+
+  <title>Fabric Community</title>
+
+  <style>
+    :root {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #172337;
+      background: #f1f6fc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top, #d8eaff, transparent 55%),
+        #f1f6fc;
+    }
+
+    main {
+      width: 100%;
+      max-width: 560px;
+      padding: 32px 24px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #d9e4f0;
+      border-radius: 24px;
+      box-shadow: 0 16px 48px #183b5b18;
+    }
+
+    .logo {
+      width: 88px;
+      height: 88px;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow {
+      color: #0b5cab;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 12px 0;
+      font-size: clamp(2rem, 7vw, 2.7rem);
+      line-height: 1.12;
+    }
+
+    p {
+      color: #526278;
+      line-height: 1.65;
+    }
+
+    a.button {
+      display: block;
+      margin-top: 24px;
+      padding: 16px;
+      border-radius: 12px;
+      background: #0b5cab;
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a.button:hover {
+      background: #084782;
+    }
+
+    .install {
+      margin-top: 24px;
+      padding: 16px;
+      text-align: left;
+      border-radius: 14px;
+      background: #edf5ff;
+      color: #334b64;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 24px;
+      font-size: 0.8rem;
+      color: #65758a;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <img
+      class="logo"
+      src="./icons/fabric-community.svg"
+      alt=""
+      width="88"
+      height="88"
+    >
+
+    <div class="eyebrow">Community companion</div>
+
+    <h1>Microsoft Fabric Community User Group</h1>
+
+    <p>
+      A convenient place to start exploring discussions,
+      sharing knowledge, and connecting with the Fabric community.
+    </p>
+
+    <a
+      class="button"
+      href="https://community.fabric.microsoft.com/group/ug-1791579720283-fe6a82"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Open the community ↗
+    </a>
+
+    <section class="install">
+      <strong>Install on iPhone or iPad</strong>
+      <p>
+        Open this website in Safari, tap Share, and select
+        Add to Home Screen. You can install it whenever you're ready.
+        This page will not redirect you automatically.
+      </p>
+    </section>
+
+    <footer>
+      An independent community companion. Not an official Microsoft
+      app or an endorsement by Microsoft.
+    </footer>
+  </main>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js")
+          .catch(error => {
+            console.error(
+              "Service worker registration failed:",
+              error
+            );
+          });
+      });
+    }
+  </script>
+</body>
+</html>
