@@ -1,0 +1,18 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Fabric Community</title>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1685e5"/>
+      <stop offset="100%" stop-color="#073b78"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#background)"/>
+
+  <path d="M112 140h288v58H112z" fill="#ffffff"/>
+  <path d="M112 227h210v58H112z" fill="#ffffff" opacity=".88"/>
+  <path d="M112 314h246v58H112z" fill="#ffffff" opacity=".74"/>
+
+  <circle cx="376" cy="256" r="38" fill="#ffd34e"/>
+</svg>
