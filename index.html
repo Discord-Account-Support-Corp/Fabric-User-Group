@@ -11,8 +11,12 @@
   <script>
     const communityUrl = "https://community.fabric.microsoft.com/group/ug-1791579720283-fe6a82";
 
-    if (window.matchMedia('(display-mode: standalone)').matches || navigator.standalone) {
-      window.location.replace(communityUrl);
+    if (window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: minimal-ui)').matches || navigator.standalone) {
+      // Open directly in a native browser tab to stop Microsoft from hijacking the request
+      window.open(communityUrl, "_system");
+      
+      // Fallback close behavior if the system allows it
+      setTimeout(() => { window.close(); }, 500);
     }
 
     if ("serviceWorker" in navigator) {
