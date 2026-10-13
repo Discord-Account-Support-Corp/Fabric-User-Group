@@ -1,4 +1,4 @@
-const CACHE_NAME = "fabric-community-pwa-v2";
+const CACHE_NAME = "fabric-community-pwa-v3";
 
 const APP_SHELL = [
   "./",
@@ -38,25 +38,11 @@ self.addEventListener("fetch", (event) => {
   }
 
   event.respondWith(
-    fetch(request)
-      .then((response) => {
-        if (response && response.ok) {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(request, copy);
-          });
-        }
-        return response;
-      })
-      .catch(async () => {
-        const cached = await caches.match(request);
-        if (cached) {
-          return cached;
-        }
-        if (request.mode === "navigate") {
-          return caches.match("./index.html");
-        }
-        return Response.error();
-      })
+    caches.match(request).then((cachedResponse) => {
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+      return fetch(request);
+    })
   );
 });
