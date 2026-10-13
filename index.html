@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -102,6 +101,19 @@
       line-height: 1.5;
     }
   </style>
+
+  <script>
+    // Define your targeted user group link
+    const TARGET_COMMUNITY_URL = "https://microsoft.com";
+
+    // Instantly check if running inside the installed standalone PWA environment
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+
+    if (isStandalone) {
+      // Bounce the user to the destination before the HTML elements even have a chance to render
+      window.location.replace(TARGET_COMMUNITY_URL);
+    }
+  </script>
 </head>
 
 <body>
@@ -125,9 +137,7 @@
 
     <a
       class="button"
-      href="https://community.fabric.microsoft.com/group/ug-1791579720283-fe6a82"
-      target="_blank"
-      rel="noopener noreferrer"
+      href="https://microsoft.com"
     >
       Open the community ↗
     </a>
@@ -136,8 +146,7 @@
       <strong>Install on iPhone or iPad</strong>
       <p>
         Open this website in Safari, tap Share, and select
-        Add to Home Screen. You can install it whenever you're ready.
-        This page will not redirect you automatically.
+        Add to Home Screen. Once installed, it will load the group instantly.
       </p>
     </section>
 
@@ -148,14 +157,12 @@
   </main>
 
   <script>
+    // Register service worker if supported
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
         navigator.serviceWorker.register("./service-worker.js")
           .catch(error => {
-            console.error(
-              "Service worker registration failed:",
-              error
-            );
+            console.error("Service worker registration failed:", error);
           });
       });
     }
